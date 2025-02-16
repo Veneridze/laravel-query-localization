@@ -1,5 +1,5 @@
 {
-    "name": "cosnavel/laravel-query-localization",
+    "name": "veneridze/laravel-query-localization",
     "description": "Query String Localization Package for Laravel",
     "license": "MIT",
     "keywords": [
@@ -19,7 +19,7 @@
             "role": "Developer"
         }
     ],
-    "homepage": "https://github.com/cosnavel/laravel-query-localization",
+    "homepage": "https://github.com/veneridze/laravel-query-localization",
     "require": {
         "php": "^8.2",
         "illuminate/contracts": "^8.73 || ^9.0 || ^10.0 || ^11.0",

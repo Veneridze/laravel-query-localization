@@ -1,21 +1,21 @@
 ![laravel-package_2](https://user-images.githubusercontent.com/42392570/128426801-fe9ad4cc-1063-4fb3-9e0e-62a5e9dfaaf2.png)
+
 # Query String Localization Package for Laravel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/cosnavel/laravel-query-localization.svg?style=flat-square)](https://packagist.org/packages/cosnavel/laravel-query-localization)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/cosnavel/laravel-query-localization/run-tests?label=tests)](https://github.com/cosnavel/laravel-query-localization/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/cosnavel/laravel-query-localization/Check%20&%20fix%20styling?label=code%20style)](https://github.com/cosnavel/laravel-query-localization/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/cosnavel/laravel-query-localization.svg?style=flat-square)](https://packagist.org/packages/cosnavel/laravel-query-localization)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/veneridze/laravel-query-localization.svg?style=flat-square)](https://packagist.org/packages/veneridze/laravel-query-localization)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/veneridze/laravel-query-localization/run-tests?label=tests)](https://github.com/veneridze/laravel-query-localization/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/veneridze/laravel-query-localization/Check%20&%20fix%20styling?label=code%20style)](https://github.com/veneridze/laravel-query-localization/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/veneridze/laravel-query-localization.svg?style=flat-square)](https://packagist.org/packages/veneridze/laravel-query-localization)
 
 ---
 
 Use this package to localize your laravel application via query strings easily.
 
-### Features:
+### Features
 
 - Localization based on a query string.
 - Includes a Livewire language selector component.
 - Optionally stores the user language preference to the user's table and apply it for every session.
-
 
 ---
 
@@ -24,13 +24,13 @@ Use this package to localize your laravel application via query strings easily.
 To get started, require the package via composer:
 
 ```bash
-composer require cosnavel/laravel-query-localization
+composer require veneridze/laravel-query-localization
 ```
-
 
 ### Config File
 
 You can publish the config file with:
+
 ```bash
 php artisan vendor:publish --provider="Veneridze\LaravelQueryLocalization\LaravelQueryLocalizationServiceProvider" --tag="laravel-query-localization-config"
 ```
@@ -42,7 +42,6 @@ The configuration options are:
 - **supportedLocales** Languages of your app (Default: English & German).
 
 - **useAcceptLanguageHeader** If true, then automatically detect language from browser.
-
 
 - **useUserLanguagePreference** If true, save the language preference of an authenticated user in the database and apply the preference on each session
 
@@ -61,9 +60,7 @@ Route::middleware(LocaleFromQuery::class)->group(function () {
 });
 ```
 
-
 ### User Language Preference
-
 
 If you want to save the language preference to the users table:
 
@@ -80,8 +77,6 @@ php artisan migrate
 
 - if you want to use mass assignment for the ```language_preference``` field in the users table make the field fillable in the user model
 
-
-
 ## Helpers
 
 ### Get Supported Locales
@@ -95,6 +90,7 @@ Veneridze\LaravelQueryLocalization\Facades\LaravelQueryLocalization::getSupporte
 ### Get Current Locale
 
 Return the key of the current locale.
+
 - Return the current locale from the session
 - if none found, it negotiates locale from acceptLanguageHeaders.
 - when acceptLanguageHeaders option is disabled, and no value is available in the session, use the applications default locale
@@ -118,6 +114,7 @@ Set locale programmatically. Internally the passed locale gets determined if it'
 ```php
 Veneridze\LaravelQueryLocalization\Facades\LaravelQueryLocalization::setLocale('en');
 ```
+
 ### Set User Language Preference
 
 Set an authed user's language preference. The passed language will also be checked for availability.
@@ -126,24 +123,16 @@ Set an authed user's language preference. The passed language will also be check
 Veneridze\LaravelQueryLocalization\Facades\LaravelQueryLocalization::setUserLanguagePreference('en');
 ```
 
-
-
 ## Language Selector
 
 If you're supporting multiple locales in your project, you will probably want to provide the users with a way to change the language.
 
 Included in this package is a language selector. The Language Selector is built with Tailwind, Alpine & Livewire.
 
-
-
-
-https://user-images.githubusercontent.com/42392570/128573314-2fe1d2a8-1743-4533-8778-65009c957232.mp4
-
-
-
-
+<https://user-images.githubusercontent.com/42392570/128573314-2fe1d2a8-1743-4533-8778-65009c957232.mp4>
 
 ### Alpine
+
 The Language Picker requires Alpine. You can use the official CDN to quickly include Alpine:
 
 ```html
@@ -162,8 +151,8 @@ Just include the Livewire Component in your blade view. All available locales fr
  ```blade
  @livewire('language-selector')
  ```
- When *useUserLanguagePreference* is enabled, the language preference of an authenticated user will be set.
 
+ When *useUserLanguagePreference* is enabled, the language preference of an authenticated user will be set.
 
 If you don't want to use Tailwind or want to customize the language picker, I recommend that you publish the component the markup as you like.
 
@@ -173,13 +162,11 @@ php artisan vendor:publish --provider="Veneridze\LaravelQueryLocalization\Larave
 
 ```
 
-
 ## Testing
 
 ```bash
 composer test
 ```
-
 
 ## Contributing
 
