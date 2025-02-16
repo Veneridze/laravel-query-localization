@@ -1,9 +1,9 @@
 <?php
 
-namespace Cosnavel\LaravelQueryLocalization;
+namespace Veneridze\LaravelQueryLocalization;
 
-use Cosnavel\LaravelQueryLocalization\Http\Livewire\LanguageSelector;
-use Cosnavel\LaravelQueryLocalization\Macros\RouterMacros;
+use Veneridze\LaravelQueryLocalization\Http\Livewire\LanguageSelector;
+use Veneridze\LaravelQueryLocalization\Macros\RouterMacros;
 use Illuminate\Routing\Router;
 use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;

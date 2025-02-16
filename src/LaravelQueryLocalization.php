@@ -1,11 +1,11 @@
 <?php
 
-namespace Cosnavel\LaravelQueryLocalization;
+namespace Veneridze\LaravelQueryLocalization;
 
-use Cosnavel\LaravelQueryLocalization\Exceptions\LanguagePreferenceException;
-use Cosnavel\LaravelQueryLocalization\Exceptions\SupportedLocalesNotDefined;
-use Cosnavel\LaravelQueryLocalization\Exceptions\UnsupportedLocaleException;
-use Cosnavel\LaravelQueryLocalization\Traits\LocaleValidation;
+use Veneridze\LaravelQueryLocalization\Exceptions\LanguagePreferenceException;
+use Veneridze\LaravelQueryLocalization\Exceptions\SupportedLocalesNotDefined;
+use Veneridze\LaravelQueryLocalization\Exceptions\UnsupportedLocaleException;
+use Veneridze\LaravelQueryLocalization\Traits\LocaleValidation;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Schema;
 
@@ -17,7 +17,7 @@ class LaravelQueryLocalization
 
     protected $request;
 
-    protected string | bool $currentLocale = false;
+    protected string|bool $currentLocale = false;
 
     protected \Illuminate\Config\Repository $configRepository;
 
@@ -62,7 +62,7 @@ class LaravelQueryLocalization
      * Set valid locale
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
-    public function setLocale(string | null $locale = null): void
+    public function setLocale(string|null $locale = null): void
     {
         $locale = $this->determineValidLanguage($locale);
 
@@ -92,7 +92,7 @@ class LaravelQueryLocalization
             return session('locale');
         }
 
-        if ($this->useAcceptLanguageHeader() && ! $this->app->runningInConsole()) {
+        if ($this->useAcceptLanguageHeader() && !$this->app->runningInConsole()) {
             $negotiator = new LanguageNegotiator($this->defaultLocale, $this->getSupportedLocales(), $this->request);
 
             return $negotiator->negotiateLanguage();
@@ -106,13 +106,13 @@ class LaravelQueryLocalization
      */
     public function getSupportedLocales(): array
     {
-        if (! empty($this->supportedLocales)) {
+        if (!empty($this->supportedLocales)) {
             return $this->supportedLocales;
         }
 
         $locales = $this->configRepository->get('query-localization.supportedLocales');
 
-        if (empty($locales) || ! \is_array($locales)) {
+        if (empty($locales) || !\is_array($locales)) {
             throw new SupportedLocalesNotDefined();
         }
 
@@ -123,7 +123,7 @@ class LaravelQueryLocalization
 
     public function setUserLanguagePreference(string $locale): void
     {
-        if (! Schema::hasColumn('users', 'language_preference')) {
+        if (!Schema::hasColumn('users', 'language_preference')) {
             throw new LanguagePreferenceException();
         }
 

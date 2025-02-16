@@ -1,9 +1,9 @@
 <?php
 
-namespace Cosnavel\LaravelQueryLocalization\Macros;
+namespace Veneridze\LaravelQueryLocalization\Macros;
 
-use Cosnavel\LaravelQueryLocalization\Facades\LaravelQueryLocalization;
-use Cosnavel\LaravelQueryLocalization\Middleware\LocaleFromQuery;
+use Veneridze\LaravelQueryLocalization\Facades\LaravelQueryLocalization;
+use Veneridze\LaravelQueryLocalization\Middleware\LocaleFromQuery;
 
 class RouterMacros
 {
@@ -19,7 +19,8 @@ class RouterMacros
             return $this->group([], function () use ($translationRoutes, $action, $routeName) {
                 foreach ($translationRoutes as $language => $translatedRoute) {
                     $this->group([
-                        'prefix' => $translatedRoute, 'middleware' => LocaleFromQuery::class.":$language",
+                        'prefix' => $translatedRoute,
+                        'middleware' => LocaleFromQuery::class . ":$language",
                     ], function () use ($action, $routeName) {
                         $this->get('/', $action)->name($routeName);
                     });

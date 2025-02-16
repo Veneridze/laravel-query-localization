@@ -1,8 +1,8 @@
 <?php
 
-namespace Cosnavel\LaravelQueryLocalization\Tests;
+namespace Veneridze\LaravelQueryLocalization\Tests;
 
-use Cosnavel\LaravelQueryLocalization\LaravelQueryLocalization;
+use Veneridze\LaravelQueryLocalization\LaravelQueryLocalization;
 
 class LaravelQueryLocalizationTest extends TestCase
 {

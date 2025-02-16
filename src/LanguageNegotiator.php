@@ -1,6 +1,6 @@
 <?php
 
-namespace Cosnavel\LaravelQueryLocalization;
+namespace Veneridze\LaravelQueryLocalization;
 
 use Illuminate\Http\Request;
 
@@ -37,7 +37,7 @@ class LanguageNegotiator
     {
         $matches = $this->getMatchesFromAcceptedLanguages();
         foreach ($matches as $key => $q) {
-            if (! empty($this->supportedLanguages[$key])) {
+            if (!empty($this->supportedLanguages[$key])) {
                 return $key;
             }
             foreach ($this->supportedLanguages as $key_supported => $locale) {
@@ -54,7 +54,7 @@ class LanguageNegotiator
         if ($this->request->server('REMOTE_HOST')) {
             $remote_host = explode('.', $this->request->server('REMOTE_HOST'));
             $lang = strtolower(end($remote_host));
-            if (! empty($this->supportedLanguages[$lang])) {
+            if (!empty($this->supportedLanguages[$lang])) {
                 return $lang;
             }
         }
@@ -75,7 +75,7 @@ class LanguageNegotiator
                 $option = array_map('trim', explode(';', $option));
                 $l = $option[0];
                 if (isset($option[1])) {
-                    $q = (float)str_replace('q=', '', $option[1]);
+                    $q = (float) str_replace('q=', '', $option[1]);
                 } else {
                     $q = null;
                     // Assign default low weight for generic values
@@ -93,7 +93,7 @@ class LanguageNegotiator
                 //less than it's parent.
                 $l_ops = explode('-', $l);
                 array_pop($l_ops);
-                while (! empty($l_ops)) {
+                while (!empty($l_ops)) {
                     //The new generic option needs to be slightly less important than it's base
                     $q -= 0.001;
                     $op = implode('-', $l_ops);

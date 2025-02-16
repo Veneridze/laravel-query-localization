@@ -1,9 +1,9 @@
 <?php
 
-namespace Cosnavel\LaravelQueryLocalization\Http\Livewire;
+namespace Veneridze\LaravelQueryLocalization\Http\Livewire;
 
-use Cosnavel\LaravelQueryLocalization\Facades\LaravelQueryLocalization;
-use Cosnavel\LaravelQueryLocalization\Traits\AttributesMergeable;
+use Veneridze\LaravelQueryLocalization\Facades\LaravelQueryLocalization;
+use Veneridze\LaravelQueryLocalization\Traits\AttributesMergeable;
 use Livewire\Component;
 
 class LanguageSelector extends Component
@@ -29,9 +29,9 @@ class LanguageSelector extends Component
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
-    public function updatedActiveLanguage(int $value): \Illuminate\Routing\Redirector | \Illuminate\Http\RedirectResponse
+    public function updatedActiveLanguage(int $value): \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
     {
-        $locale = $this->languages->first(fn ($i, $k) => $value == $k)['key'];
+        $locale = $this->languages->first(fn($i, $k) => $value == $k)['key'];
 
         LaravelQueryLocalization::setUserLanguagePreference($locale);
         $this->locale = $locale;

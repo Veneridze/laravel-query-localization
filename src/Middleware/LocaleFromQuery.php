@@ -1,9 +1,9 @@
 <?php
 
-namespace Cosnavel\LaravelQueryLocalization\Middleware;
+namespace Veneridze\LaravelQueryLocalization\Middleware;
 
 use Closure;
-use Cosnavel\LaravelQueryLocalization\Facades\LaravelQueryLocalization;
+use Veneridze\LaravelQueryLocalization\Facades\LaravelQueryLocalization;
 use Illuminate\Http\Request;
 
 class LocaleFromQuery
@@ -16,7 +16,7 @@ class LocaleFromQuery
             return $next($request);
         }
 
-        if (! session('locale') && $translatedRoute) {
+        if (!session('locale') && $translatedRoute) {
             LaravelQueryLocalization::setLocale($translatedRoute);
 
             return $next($request);

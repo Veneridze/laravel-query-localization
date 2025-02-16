@@ -1,6 +1,6 @@
 <?php
 
-namespace Cosnavel\LaravelQueryLocalization\Traits;
+namespace Veneridze\LaravelQueryLocalization\Traits;
 
 trait LocaleValidation
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Cosnavel\LaravelQueryLocalization\Facades;
+namespace Veneridze\LaravelQueryLocalization\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @package Cosnavel\LaravelQueryLocalization\Facades
+ * @package Veneridze\LaravelQueryLocalization\Facades
  */
 class LaravelQueryLocalization extends Facade
 {

@@ -32,7 +32,7 @@ composer require cosnavel/laravel-query-localization
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Cosnavel\LaravelQueryLocalization\LaravelQueryLocalizationServiceProvider" --tag="laravel-query-localization-config"
+php artisan vendor:publish --provider="Veneridze\LaravelQueryLocalization\LaravelQueryLocalizationServiceProvider" --tag="laravel-query-localization-config"
 ```
 
 After publishing, *config query-localization.php* will be created.
@@ -74,7 +74,7 @@ If you want to save the language preference to the users table:
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="Cosnavel\LaravelQueryLocalization\LaravelQueryLocalizationServiceProvider" --tag="query-localization-migrations"
+php artisan vendor:publish --provider="Veneridze\LaravelQueryLocalization\LaravelQueryLocalizationServiceProvider" --tag="query-localization-migrations"
 php artisan migrate
 ```
 
@@ -89,7 +89,7 @@ php artisan migrate
 Return all supported locales and their properties as an array.
 
 ```php
-Cosnavel\LaravelQueryLocalization\Facades\LaravelQueryLocalization::getSupportedLocales();
+Veneridze\LaravelQueryLocalization\Facades\LaravelQueryLocalization::getSupportedLocales();
 ```
 
 ### Get Current Locale
@@ -100,7 +100,7 @@ Return the key of the current locale.
 - when acceptLanguageHeaders option is disabled, and no value is available in the session, use the applications default locale
 
 ```php
-Cosnavel\LaravelQueryLocalization\Facades\LaravelQueryLocalization::getCurrentLocale();
+Veneridze\LaravelQueryLocalization\Facades\LaravelQueryLocalization::getCurrentLocale();
 ```
 
 ### Determine Valid Locales
@@ -108,7 +108,7 @@ Cosnavel\LaravelQueryLocalization\Facades\LaravelQueryLocalization::getCurrentLo
 Checks if the passed locale is a supportedLocale (check the config to add your needed locales). If it is not, the returned locale is the application's default locale.
 
 ```php
-Cosnavel\LaravelQueryLocalization\Facades\LaravelQueryLocalization::determineValidLanguage('en');
+Veneridze\LaravelQueryLocalization\Facades\LaravelQueryLocalization::determineValidLanguage('en');
 ```
 
 ### Set Locale
@@ -116,14 +116,14 @@ Cosnavel\LaravelQueryLocalization\Facades\LaravelQueryLocalization::determineVal
 Set locale programmatically. Internally the passed locale gets determined if it's a valid locale.
 
 ```php
-Cosnavel\LaravelQueryLocalization\Facades\LaravelQueryLocalization::setLocale('en');
+Veneridze\LaravelQueryLocalization\Facades\LaravelQueryLocalization::setLocale('en');
 ```
 ### Set User Language Preference
 
 Set an authed user's language preference. The passed language will also be checked for availability.
 
 ```php
-Cosnavel\LaravelQueryLocalization\Facades\LaravelQueryLocalization::setUserLanguagePreference('en');
+Veneridze\LaravelQueryLocalization\Facades\LaravelQueryLocalization::setUserLanguagePreference('en');
 ```
 
 
@@ -169,7 +169,7 @@ If you don't want to use Tailwind or want to customize the language picker, I re
 
 ```bash
 
-php artisan vendor:publish --provider="Cosnavel\LaravelQueryLocalization\LaravelQueryLocalizationServiceProvider" --tag="query-localization-views"
+php artisan vendor:publish --provider="Veneridze\LaravelQueryLocalization\LaravelQueryLocalizationServiceProvider" --tag="query-localization-views"
 
 ```
 
@@ -187,7 +187,7 @@ Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 ## Credits
 
-- [Cosnavel](https://github.com/Cosnavel)
+- [Veneridze](https://github.com/Veneridze)
 - [Rheamars](https://github.com/Rheamars)
 - [Lotti](https://twitter.com/CharlotteZaspel) Thanks for the artwork
 - [All Contributors](../../contributors)

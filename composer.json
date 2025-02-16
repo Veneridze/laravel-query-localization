@@ -12,12 +12,17 @@
             "name": "Cosnavel",
             "email": "niclasdevelop@gmail.com",
             "role": "Developer"
+        },
+        {
+            "name": "Veneridze",
+            "email": "viacheslav.kopaev@yandex.ru",
+            "role": "Developer"
         }
     ],
     "homepage": "https://github.com/cosnavel/laravel-query-localization",
     "require": {
-        "php": "^8.0",
-        "illuminate/contracts": "^8.73 || ^9.0",
+        "php": "^8.2",
+        "illuminate/contracts": "^8.73 || ^9.0 || ^10.0 || ^11.0",
         "spatie/laravel-package-tools": "^1.11"
     },
     "require-dev": {
@@ -36,13 +41,13 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Cosnavel\\LaravelQueryLocalization\\": "src",
-            "Cosnavel\\LaravelQueryLocalization\\Database\\Factories\\": "database/factories"
+            "Veneridze\\LaravelQueryLocalization\\": "src",
+            "Veneridze\\LaravelQueryLocalization\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Cosnavel\\LaravelQueryLocalization\\Tests\\": "tests"
+            "Veneridze\\LaravelQueryLocalization\\Tests\\": "tests"
         }
     },
     "config": {
@@ -55,10 +60,10 @@
     "extra": {
         "laravel": {
             "aliases": {
-                "LaravelQueryLocalization": "Cosnavel\\LaravelQueryLocalization\\LaravelQueryLocalizationFacade"
+                "LaravelQueryLocalization": "Veneridze\\LaravelQueryLocalization\\LaravelQueryLocalizationFacade"
             },
             "providers": [
-                "Cosnavel\\LaravelQueryLocalization\\LaravelQueryLocalizationServiceProvider"
+                "Veneridze\\LaravelQueryLocalization\\LaravelQueryLocalizationServiceProvider"
             ]
         }
     },

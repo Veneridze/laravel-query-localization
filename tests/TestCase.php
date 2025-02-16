@@ -1,8 +1,8 @@
 <?php
 
-namespace Cosnavel\LaravelQueryLocalization\Tests;
+namespace Veneridze\LaravelQueryLocalization\Tests;
 
-use Cosnavel\LaravelQueryLocalization\LaravelQueryLocalizationServiceProvider;
+use Veneridze\LaravelQueryLocalization\LaravelQueryLocalizationServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
@@ -21,7 +21,7 @@ abstract class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Cosnavel\\LaravelQueryLocalization\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn(string $modelName) => 'Veneridze\\LaravelQueryLocalization\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 

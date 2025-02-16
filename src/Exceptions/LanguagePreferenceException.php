@@ -1,6 +1,6 @@
 <?php
 
-namespace Cosnavel\LaravelQueryLocalization\Exceptions;
+namespace Veneridze\LaravelQueryLocalization\Exceptions;
 
 use Exception;
 
