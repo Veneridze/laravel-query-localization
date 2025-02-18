@@ -6,8 +6,8 @@ return [
 
         //'da'          => ['name' => 'Danish',                 'script' => 'Latn', 'native' => 'dansk', 'regional' => 'da_DK', 'flag' => '🇩🇰'],
 
-        'de'          => ['name' => 'Deutsch',                 'script' => 'Latn', 'native' => 'Deutsch', 'regional' => 'de_DE', 'flag' => '🇩🇪'],
-        'en'          => ['name' => 'English',                'script' => 'Latn', 'native' => 'English', 'regional' => 'en_US', 'flag' => '🇺🇸'],
+        'de' => ['name' => 'Deutsch', 'script' => 'Latn', 'native' => 'Deutsch', 'regional' => 'de_DE', 'flag' => '🇩🇪'],
+        'en' => ['name' => 'English', 'script' => 'Latn', 'native' => 'English', 'regional' => 'en_US', 'flag' => '🇺🇸'],
         // 'es'          => ['name' => 'Spanish',                'script' => 'Latn', 'native' => 'español', 'regional' => 'es_ES', 'flag' => '🇪🇸'],
         // 'fr'          => ['name' => 'French',                'script' => 'Latn', 'native' => 'français', 'regional' => 'fr_FR', 'flag' => '🇫🇷'],
         //'it'          => ['name' => 'Italian',                'script' => 'Latn', 'native' => 'italiano', 'regional' => 'it_IT', 'flag' => '🇮🇹'],
@@ -28,10 +28,10 @@ return [
     //
     // If false, system will take app.php locale attribute
 
-    'useAcceptLanguageHeader' => true,
+    'useAcceptLanguageHeader' => env('ENABLE_LANG_SWITCH', true),
 
 
     // Save the language preferences for an authenticated user in the database.
     // Apply this preference for the auth user for every session.
-    'useUserLanguagePreference' => true,
+    'useUserLanguagePreference' => env('ENABLE_LANG_SWITCH', true),
 ];
