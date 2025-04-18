@@ -2,12 +2,14 @@
 
 namespace Veneridze\LaravelQueryLocalization;
 
+use AllowDynamicProperties;
 use Veneridze\LaravelQueryLocalization\Exceptions\LanguagePreferenceException;
 use Veneridze\LaravelQueryLocalization\Exceptions\SupportedLocalesNotDefined;
 use Veneridze\LaravelQueryLocalization\Exceptions\UnsupportedLocaleException;
 use Veneridze\LaravelQueryLocalization\Traits\LocaleValidation;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Schema;
+#[AllowDynamicProperties]
 
 class LaravelQueryLocalization
 {
